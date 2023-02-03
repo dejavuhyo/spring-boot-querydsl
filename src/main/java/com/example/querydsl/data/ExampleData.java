@@ -1,14 +1,12 @@
-package com.example.querydsl.dto;
+package com.example.querydsl.data;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 @Data
-@ToString
 @NoArgsConstructor
-public class SampleDto {
-    private String id;
+public class ExampleData {
+    private String userId;
     private String name;
     private String email;
 }
