@@ -7,4 +7,4 @@ Spring Boot QueryDSL 예제이다. 포트는 8080을 사용한다.
 
 * OpenJDK 17
 
-* spring-boot 3.0.1
+* spring-boot 2.7.8
