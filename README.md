@@ -21,7 +21,7 @@ Spring Boot QueryDSL 예제이다. 포트는 8080을 사용한다.
 * GET
   - http://localhost:8080/querydsl/1
 
-~~### 3) 저장~~
+### 3) 저장
 
 ~~* POST~~
   ~~- http://localhost:8080/querydsl~~
