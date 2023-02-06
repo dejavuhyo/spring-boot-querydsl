@@ -1,6 +1,6 @@
 package com.example.querydsl.repository;
 
-import com.example.querydsl.data.ExampleData;
+import com.example.querydsl.dto.ExampleDto;
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.stereotype.Repository;
@@ -25,10 +25,37 @@ public class ExampleQueryDslRepository {
         this.jpaQueryFactory = jpaQueryFactory;
     }
 
-    public List<ExampleData> findAll() {
-        return jpaQueryFactory
-                .select(Projections.bean(ExampleData.class, example.userId, example.name, example.email))
+    public List<ExampleDto> findAll() {
+        return jpaQueryFactory.select(Projections.bean(ExampleDto.class, example.id, example.name, example.email))
                 .from(example)
                 .fetch();
+    }
+
+    public ExampleDto findById(String id) {
+        return jpaQueryFactory.select(Projections.bean(ExampleDto.class, example.id, example.name, example.email))
+                .from(example)
+                .where(example.id.eq(id))
+                .fetchOne();
+    }
+
+    public void save(ExampleDto exampleData) {
+        jpaQueryFactory.insert(example)
+                .columns(example.id, example.name, example.email)
+                .values(exampleData.getId(), exampleData.getName(), exampleData.getEmail())
+                .execute();
+    }
+
+    public void put(ExampleDto exampleData) {
+        jpaQueryFactory.update(example)
+                .where(example.id.eq(exampleData.getId()))
+                .set(example.name, exampleData.getName())
+                .set(example.email, exampleData.getEmail())
+                .execute();
+    }
+
+    public void deleteById(String id) {
+        jpaQueryFactory.delete(example)
+                .where(example.id.eq(id))
+                .execute();
     }
 }
