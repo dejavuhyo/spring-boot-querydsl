@@ -9,6 +9,10 @@ Spring Boot QueryDSL 예제이다. 포트는 8080을 사용한다.
 
 * spring-boot 2.7.8
 
+* querydsl-apt 5.0.0
+
+* querydsl-jpa 5.0.0
+
 ## 3. API 실행
 
 ### 1) 전체 조회
