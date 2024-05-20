@@ -1,7 +1,7 @@
 # Spring Boot 2.7 QueryDSL
 
 ## 1. 설명
-Spring Boot QueryDSL 예제이다. 포트는 8080을 사용한다.
+Spring Boot 2.7 QueryDSL 예제이다. 포트는 8080을 사용한다.
 
 ## 2. 개발환경
 
